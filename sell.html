@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell Stock Data</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <script src="autotype.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/abe8fba89b.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <section id="title">
+
+    <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <a class="navbar-brand" href="">InvestIQ</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Back</a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+  </section>
+
+<h2 class="buy-h2">Sell Stock Data</h2>
+
+<table id="stock-table">
+</table>
+
+<script>
+fetch('https://script.google.com/macros/s/AKfycbyONS6uCwdaQ6BS85WRDDK9kte2akAA8W7eD0rb1Ke1zJJA7CmqRDmxPrdmaRSlg_TIPA/exec')
+  .then(response => response.json())
+  .then(data => {
+    const table = document.getElementById('stock-table');
+    // const headers = data.content[0];
+    const headers = ['SYMBOL', 'LTP', 'SELL', 'SELL_TARGET1', 'SELL_TARGET2', 'SELL_TARGET3', 'SELL_STOP LOSS'];
+    const headerIndex = [0, 1, 8, 13, 14, 15, 16]
+    const rows = data.content.slice(1);
+
+    // Create table headers
+    const headerRow = document.createElement('tr');
+    headers.forEach(headerText => {
+      const th = document.createElement('th');
+      th.textContent = headerText;
+      headerRow.appendChild(th);
+    });
+    table.appendChild(headerRow);
+    
+    // // Filter and create table rows for stocks with "true" in BUY column
+    // rows.forEach(rowData => {
+    //   if (rowData[7] === true) { // Index 7 corresponds to the BUY column
+    //     const tr = document.createElement('tr');
+    //     rowData.forEach(cellData => {
+    //       const td = document.createElement('td');
+    //       td.textContent = cellData;
+    //       tr.appendChild(td);
+    //     });
+    //     table.appendChild(tr);
+    //   }
+    // });
+    // rows.forEach(rowData => {
+    //   if (rowData[7] === true) { // Index 7 corresponds to the BUY column
+    //     const tr = document.createElement('tr');
+    //     headers.forEach(headerIndex => {
+    //       const td = document.createElement('td');
+    //       td.textContent = rowData[headerIndex]; // Subtract
+    //       console.log(headerIndex)
+    //       tr.appendChild(td);
+    //     });
+    //     table.appendChild(tr);
+    //   }
+    // });
+    rows.forEach(rowData => {
+      if (rowData[8] === true) { // Index 7 corresponds to the BUY column
+        const tr = document.createElement('tr');
+        headerIndex.forEach(index => {
+          const td = document.createElement('td');
+          td.textContent = rowData[index];
+        //   console.log(rowData[index]);
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+</script>
+
+<section id="footer">
+
+  <a href="https://github.com/DipakBachhav25"><i class="social-icon fa-brands fa-github fa-2x"></i></a>
+  <a href="https://www.linkedin.com/in/dipak-bachhav-422144253/"><i class="social-icon fa-brands fa-linkedin fa-2x"></i></a>
+  <a href="https://www.instagram.com/bachhav_dipak25/"><i class="social-icon fa-brands fa-instagram fa-2x"></i></a>
+  <a href="#">  <i class="social-icon fa-solid fa-envelope fa-2x"></i></a>
+  <p class="buy-p">© Copyright 2024 DipakBachhav</p>
+
+</section>
+
+</body>
+</html>
