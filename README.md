@@ -22,13 +22,14 @@ _(This image showcases a features that are provided by website)_
 ![Learning Resources](https://res.cloudinary.com/dxebmxfnh/image/upload/v1741243297/svnz5zbew0m1wdbbinhm.png)
 _(This image shows the feedback of our users)_
 
-### Simulated Trading Interface
+### Pricing
 ![Simulated Trading Interface](https://res.cloudinary.com/dxebmxfnh/image/upload/v1741243297/ro1ihbz48dcyjbiqvczn.png)
-_(This image demonstrates the layout and functionalities of the trading platform)_
+_(This image demonstrates the pricing model of website)_
 
-### Additional Screenshots
-![Image](https://res.cloudinary.com/dxebmxfnh/image/upload/v1741243296/og0ijvydbu3tm7yvzhtt.png)
+### Contact
 ![Image](https://res.cloudinary.com/dxebmxfnh/image/upload/v1741243296/ifwjl5p9nufmqonolhn0.png)
+![Image](https://res.cloudinary.com/dxebmxfnh/image/upload/v1741243296/og0ijvydbu3tm7yvzhtt.png)
+
 
 ## Getting Started
 
