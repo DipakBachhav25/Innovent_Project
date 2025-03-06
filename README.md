@@ -1,3 +1,8 @@
+## Getting Started
+
+To use InvestIQ, simply visit our website: [InvestIQ](https://innovent-project.onrender.com/). No registration is required to access the learning resources and simulated trading environment.
+
+
 # InvestIQ: Stock Market Learning Web App
 
 InvestIQ is a web application designed to help users learn about the stock market and make informed investment decisions. It provides a user-friendly interface with educational resources, interactive tools, and a simulated trading environment.
