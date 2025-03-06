@@ -45,9 +45,6 @@ To use InvestIQ, simply visit our website (link to be added when deployed). No r
 
 InvestIQ is currently under development, and we welcome contributions from the community. If you're interested in helping us improve the app, please visit our contribution guidelines (link to be added).
 
-## License
-
-This project is licensed under the MIT License (link to MIT License).
 
 ## Disclaimer
 
