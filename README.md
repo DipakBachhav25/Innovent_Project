@@ -41,9 +41,8 @@ To use InvestIQ, simply visit our website (link to be added when deployed). No r
 
 ## Technologies Used
 
-- **Front-end:** HTML, CSS, JavaScript (specific frameworks to be mentioned)
-- **Back-end:** node.js and express.js
-- **Database:** MongoDB
+- **Front-end:** HTML, CSS, Bootstrap
+- **Back-end:** JavaScript
 
 ## Contributing
 
